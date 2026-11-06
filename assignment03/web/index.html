@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wasm vs. JavaScript</title>
+<style>
+  :root{
+    --paper:#F3F5F8; --card:#FFFFFF; --ink:#1B2A3A; --ink-soft:#4A5B70; --line:#DCE2EA;
+    --accent:#3B4CC0; --accent-soft:#EAECF8;
+    --js:#C99A06; --wasm:#654FF0;
+    --ok:#1E8E4E; --no:#C6342E;
+    --shadow:0 1px 2px rgba(27,42,58,.06),0 8px 24px rgba(27,42,58,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#12161C; --card:#1B2129; --ink:#E6EAF0; --ink-soft:#9AA7B6; --line:#2C3541;
+      --accent:#8C9BFF; --accent-soft:#252C45;
+      --js:#E8C33A; --wasm:#9D8CFF;
+      --ok:#4CC27F; --no:#F0736C;
+      --shadow:none;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;padding:24px 16px 64px}
+  .wrap{max-width:900px;margin:0 auto}
+  h1{font-size:1.6rem;margin:0 0 4px}
+  h2{font-size:1.1rem;margin:0 0 12px}
+  .sub{color:var(--ink-soft);margin:0 0 22px;font-size:.95rem}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px;margin-bottom:18px}
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  label{font-size:.9rem;color:var(--ink-soft)}
+  select,input{font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:8px 12px}
+  button{font:inherit;font-weight:600;border-radius:10px;padding:9px 18px;cursor:pointer;border:1.5px solid var(--accent)}
+  button.primary{background:var(--accent);color:#fff}
+  button.ghost{background:transparent;color:var(--accent)}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  .hint{font-size:.85rem;color:var(--ink-soft)}
+  .out{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.88rem;background:var(--paper);border-radius:10px;padding:10px 12px;margin-top:12px;white-space:pre-wrap;min-height:2.6em}
+
+  .progress{margin-top:16px}
+  .bar{height:10px;background:var(--line);border-radius:99px;overflow:hidden}
+  .bar span{display:block;height:100%;width:0;background:var(--accent);transition:width .15s}
+  .progress .meta{display:flex;justify-content:space-between;font-size:.85rem;color:var(--ink-soft);margin-top:6px;font-variant-numeric:tabular-nums}
+
+  .table-wrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.9rem;font-variant-numeric:tabular-nums}
+  th{text-align:right;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{text-align:right;padding:8px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th:first-child,td:first-child,th:nth-child(2),td:nth-child(2){text-align:left}
+  td.faster{font-weight:700}
+  .ok{color:var(--ok)} .no{color:var(--no)}
+
+  .chart{display:grid;gap:14px;margin-top:6px}
+  .chart .name{font-size:.88rem;margin-bottom:4px}
+  .chart .line{display:flex;align-items:center;gap:8px;font-size:.8rem;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .chart .line .b{height:12px;border-radius:0 4px 4px 0;min-width:2px}
+  .chart .tag{width:44px;flex:none}
+  .legend{display:flex;gap:16px;font-size:.85rem;color:var(--ink-soft);margin-bottom:10px}
+  .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  .hidden{display:none !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>WebAssembly vs. JavaScript</h1>
+  <p class="sub">Dieselben Algorithmen einmal in JavaScript und einmal in AssemblyScript (kompiliert zu WebAssembly), gemessen im Browser.</p>
+
+  <section class="panel">
+    <h2>1. Einstiegsbeispiel (assembly/hello.ts)</h2>
+    <div class="row">
+      <input id="a" type="number" value="97" style="width:110px" aria-label="Zahl a">
+      <input id="b" type="number" value="3" style="width:110px" aria-label="Zahl b">
+      <input id="name" value="Patrick" style="width:150px" aria-label="Name">
+      <button class="ghost" id="helloBtn">In Wasm ausführen</button>
+    </div>
+    <div class="out" id="helloOut"></div>
+  </section>
+
+  <section class="panel">
+    <h2>2. Laufzeitvergleich</h2>
+    <div class="row">
+      <label for="runs">Wiederholungen pro Funktion</label>
+      <select id="runs">
+        <option value="10">10</option>
+        <option value="100" selected>100</option>
+        <option value="1000">1.000</option>
+        <option value="10000">10.000</option>
+      </select>
+      <button class="primary" id="startBtn" disabled>Benchmark starten</button>
+      <button class="ghost hidden" id="cancelBtn">Abbrechen</button>
+    </div>
+    <p class="hint" id="estimate"></p>
+    <div class="progress hidden" id="progress">
+      <div class="bar"><span id="barFill"></span></div>
+      <div class="meta"><span id="progLabel"></span><span id="progEta"></span></div>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="resultsPanel">
+    <h2>Ergebnisse</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Funktion</th><th>Parameter</th><th>JS Median</th><th>Wasm Median</th><th>Faktor</th>
+          <th>JS σ</th><th>Wasm σ</th><th>Ergebnis</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <p class="hint">Faktor = Median JS ÷ Median Wasm. Über 1 ist WebAssembly schneller, unter 1 JavaScript. σ = Standardabweichung der Einzelmessungen.</p>
+
+    <h2 style="margin-top:22px">Median im Vergleich</h2>
+    <div class="legend"><span><i style="background:var(--js)"></i>JavaScript</span><span><i style="background:var(--wasm)"></i>AssemblyScript / Wasm</span></div>
+    <div class="chart" id="chart"></div>
+    <p class="hint" id="summary"></p>
+  </section>
+</div>
+
+<script type="module">
+const $ = s => document.querySelector(s);
+const fmt = ms => ms.toFixed(2) + ' ms';
+const SECONDS_PER_RUN = 0.1; // grob geschätzt aus node
+
+// beispiel
+import('../build/hello.js').then(hello => {
+  $('#helloBtn').onclick = () => {
+    const a = Number($('#a').value) | 0, b = Number($('#b').value) | 0;
+    $('#helloOut').textContent =
+      `add(${a}, ${b})      = ${hello.add(a, b)}\n` +
+      `isPrime(${a})      = ${hello.isPrime(a)}\n` +
+      `factorial(${b})    = ${hello.factorial(b)}\n` +
+      `greet("${$('#name').value}") = ${hello.greet($('#name').value)}`;
+  };
+  $('#helloBtn').click();
+}).catch(e => { $('#helloOut').textContent = 'hello.wasm konnte nicht geladen werden: ' + e.message; });
+
+// benchmark
+let worker = null, rows = [], started = 0;
+
+function updateEstimate(){
+  const s = Number($('#runs').value) * SECONDS_PER_RUN;
+  $('#estimate').textContent = 'Geschätzte Dauer: ' + (s < 90 ? `ca. ${Math.max(1, Math.round(s))} s` : `ca. ${Math.round(s / 60)} min`) +
+    ' (läuft in einem Web Worker, die Seite bleibt bedienbar)';
+}
+$('#runs').onchange = updateEstimate;
+updateEstimate();
+
+function startWorker(){
+  worker = new Worker('./worker.js', { type: 'module' });
+  worker.onmessage = ({ data }) => {
+    if (data.type === 'ready') $('#startBtn').disabled = false;
+    else if (data.type === 'progress') showProgress(data);
+    else if (data.type === 'result') addRow(data.row);
+    else if (data.type === 'done') finish();
+  };
+  worker.onerror = e => { $('#progLabel').textContent = 'Fehler im Worker: ' + e.message; };
+}
+
+function showProgress({ done, total, label }){
+  const frac = done / total;
+  const elapsed = (performance.now() - started) / 1000;
+  const eta = frac > 0 ? elapsed / frac - elapsed : 0;
+  $('#barFill').style.width = (frac * 100).toFixed(1) + '%';
+  $('#progLabel').textContent = `${Math.round(frac * 100)} % · ${label}`;
+  $('#progEta').textContent = frac > 0 ? `noch ca. ${eta < 90 ? Math.round(eta) + ' s' : Math.round(eta / 60) + ' min'}` : '';
+}
+
+function addRow(r){
+  rows.push(r);
+  $('#resultsPanel').classList.remove('hidden');
+  const wasmFaster = r.speedup >= 1;
+  $('#tbody').insertAdjacentHTML('beforeend', `<tr>
+    <td>${r.label}</td><td>${r.params}</td>
+    <td class="${wasmFaster ? '' : 'faster'}">${fmt(r.js.median)}</td>
+    <td class="${wasmFaster ? 'faster' : ''}">${fmt(r.wasm.median)}</td>
+    <td>${r.speedup.toFixed(2)}×</td>
+    <td>${fmt(r.js.sd)}</td><td>${fmt(r.wasm.sd)}</td>
+    <td class="${r.sameResult ? 'ok' : 'no'}">${r.sameResult ? '✓ gleich' : '✕ abweichend'}</td></tr>`);
+  drawChart();
+}
+
+function drawChart(){
+  const max = Math.max(...rows.flatMap(r => [r.js.median, r.wasm.median]));
+  $('#chart').innerHTML = rows.map(r => `
+    <div>
+      <div class="name">${r.label} <span class="hint">(${r.params})</span></div>
+      <div class="line"><span class="tag">JS</span><span class="b" style="width:${r.js.median / max * 80}%;background:var(--js)"></span>${fmt(r.js.median)}</div>
+      <div class="line"><span class="tag">Wasm</span><span class="b" style="width:${r.wasm.median / max * 80}%;background:var(--wasm)"></span>${fmt(r.wasm.median)}</div>
+    </div>`).join('');
+}
+
+function finish(){
+  const jsT = rows.reduce((a, r) => a + r.js.total, 0), wasmT = rows.reduce((a, r) => a + r.wasm.total, 0);
+  const wins = rows.filter(r => r.speedup >= 1).length;
+  $('#summary').textContent = `WebAssembly war bei ${wins} von ${rows.length} Funktionen schneller. ` +
+    `Gesamte Messzeit: JavaScript ${(jsT / 1000).toFixed(1)} s, WebAssembly ${(wasmT / 1000).toFixed(1)} s ` +
+    `(${navigator.userAgent.match(/(Firefox|Chrome|Safari|Edg)\/[\d.]+/)?.[0] ?? 'Browser'}).`;
+  $('#barFill').style.width = '100%';
+  $('#progLabel').textContent = `Fertig nach ${Math.round((performance.now() - started) / 1000)} s`;
+  $('#progEta').textContent = '';
+  setRunning(false);
+}
+
+function setRunning(on){
+  $('#startBtn').disabled = on;
+  $('#runs').disabled = on;
+  $('#cancelBtn').classList.toggle('hidden', !on);
+}
+
+$('#startBtn').onclick = () => {
+  rows = [];
+  $('#tbody').innerHTML = ''; $('#chart').innerHTML = ''; $('#summary').textContent = '';
+  $('#resultsPanel').classList.add('hidden');
+  $('#progress').classList.remove('hidden');
+  $('#barFill').style.width = '0';
+  $('#progLabel').textContent = 'Starte …'; $('#progEta').textContent = '';
+  started = performance.now();
+  setRunning(true);
+  worker.postMessage({ runs: Number($('#runs').value) });
+};
+
+// worker kann man nur beenden, danach neu starten
+$('#cancelBtn').onclick = () => {
+  worker.terminate();
+  $('#progLabel').textContent = 'Abgebrochen';
+  $('#progEta').textContent = '';
+  setRunning(false);
+  $('#startBtn').disabled = true;
+  startWorker();
+};
+
+startWorker();
+</script>
+</body>
+</html>

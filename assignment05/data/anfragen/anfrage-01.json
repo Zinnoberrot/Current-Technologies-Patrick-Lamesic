@@ -1,0 +1,8 @@
+{
+  "id": "anfrage-01",
+  "beschreibung": "Normale Auskunftsanfrage, Identität korrekt",
+  "von": "max.mustermann@example.com",
+  "eingegangen": "2026-10-20",
+  "betreff": "Auskunft nach Art. 15 DSGVO",
+  "text": "Sehr geehrte Damen und Herren,\n\nich bitte gemäß Art. 15 DSGVO um Auskunft, welche personenbezogenen Daten Sie über mich gespeichert haben.\nMeine Kundennummer ist K-1001, mein Geburtsdatum der 12.04.1990.\n\nMit freundlichen Grüßen\nMax Mustermann"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "anfrage-02",
+  "beschreibung": "Identität kann nicht bestätigt werden (fremde E-Mail-Adresse, falsches Geburtsdatum)",
+  "von": "anna.h.privat@mail.example",
+  "eingegangen": "2026-10-22",
+  "betreff": "Meine Daten",
+  "text": "Hallo,\n\nich bin Anna Huber und möchte wissen, welche Daten Sie über mich haben (Art. 15 DSGVO).\nKundennummer K-1002, geboren am 01.01.1985.\nBitte schicken Sie alles an diese Adresse.\n\nAnna Huber"
+}

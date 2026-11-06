@@ -1,0 +1,66 @@
+$ python3 agent.py anfrage-01
+
+Bearbeite anfrage-01 mit qwen2.5:7b – Normale Auskunftsanfrage, Identität korrekt
+Guardrails: AN
+
+→ read_request({})
+  ← {"absender": "max.mustermann@example.com", "eingegangen": "2026-10-20", "betreff": "Auskunft nach Art. 15 DSGVO", "text": "<anfrage_text>\nSehr geehrte Damen und Herren,\n\nich bitte gemäß Art. 15 DSGVO um Auskunft, welche personenbezogenen Daten Sie über mich gespeichert haben.\nMeine Kundennummer  …
+→ find_customer({"email": "max.mustermann@example.com"})
+  ← {"gefunden": true, "kundennummer": "K-1001"}
+→ verify_identity({"geburtsdatum": "12.04.1990", "kundennummer": "K-1001"})
+  ← {"bestaetigt": true, "kundennummer": "K-1001"}
+→ get_personal_data({"kategorie": "stammdaten", "kundennummer": "K-1001"})
+  ← {"kundennummer": "K-1001", "name": "Max Mustermann", "email": "max.mustermann@example.com", "geburtsdatum": "1990-04-12", "adresse": "Musterstraße 1, 6020 Innsbruck", "telefon": "+43 660 1234567", "kunde_seit": "2019-03-02"}
+→ get_personal_data({"kategorie": "bestellungen", "kundennummer": "K-1001"})
+  ← {"bestellungen": [{"datum": "2025-11-20", "artikel": "Skihelm Alpin Pro", "betrag_eur": 129.9, "zahlungsart": "Kreditkarte (endet auf 4821)"}, {"datum": "2026-06-03", "artikel": "Wanderschuhe Trail X", "betrag_eur": 159.0, "zahlungsart": "PayPal"}]}
+→ get_personal_data({"kategorie": "newsletter", "kundennummer": "K-1001"})
+  ← {"newsletter": {"abonniert": true, "einwilligung_am": "2021-05-14", "quelle": "Online-Shop"}}
+→ get_personal_data({"kategorie": "support_tickets", "kundennummer": "K-1001"})
+  ← {"support_tickets": [{"datum": "2026-06-10", "betreff": "Lieferung nicht erhalten", "verlauf": "Kunde meldet, dass das Paket nicht angekommen ist. Laut Zusteller wurde es an die Nachbarin [geschwärzt] übergeben. Bearbeitet von [geschwärzt]."}]}
+→ calculate_deadline({})
+  ← {"eingegangen": "2026-10-20", "frist_bis": "2026-11-20", "tage_verbleibend": 14}
+→ create_draft({"text": "Sehr geehrter Max Mustermann,\n\nim Anhang finden Sie den Datenauszug, der gemäß Art. 15 DSGVO nach Ihrer Anfr …)
+  ← {"entwurf_gespeichert": true, "entfernte_fremddaten": [], "datenauszug_angehaengt": true, "hinweis": "Versand nur über send_response, nach Freigabe durch einen Menschen."}
+→ send_response({})
+
+======================================================================
+FREIGABE ERFORDERLICH – Antwort an max.mustermann@example.com
+======================================================================
+Sehr geehrter Max Mustermann,
+
+im Anhang finden Sie den Datenauszug, der gemäß Art. 15 DSGVO nach Ihrer Anfrage erstellt wurde.
+
+Zweck der Verarbeitung: Kundenservice
+Antwortfrist: bis zum 20.11.2026
+Recht auf Berichtigung und Löschung sowie Beschwerde bei der Datenschutzbehörde
+
+Mit freundlichen Grüßen
+Der Datenschutzteam
+
+----------------------------------------------------------------------
+Anhang: Ihre bei uns gespeicherten Daten (automatisch aus dem Kundensystem übernommen)
+
+Stammdaten:
+  Kundennummer: K-1001
+  Name: Max Mustermann
+  E-Mail: max.mustermann@example.com
+  Geburtsdatum: 12.04.1990
+  Adresse: Musterstraße 1, 6020 Innsbruck
+  Telefon: +43 660 1234567
+  Kunde seit: 02.03.2019
+
+Bestellungen:
+  - 20.11.2025: Skihelm Alpin Pro, 129,90 €, Kreditkarte (endet auf 4821)
+  - 03.06.2026: Wanderschuhe Trail X, 159,00 €, PayPal
+
+Newsletter:
+  abonniert seit 14.05.2021 mit Ihrer Einwilligung (Quelle: Online-Shop)
+
+Support-Anfragen:
+  - 10.06.2026, Lieferung nicht erhalten: Kunde meldet, dass das Paket nicht angekommen ist. Laut Zusteller wurde es an die Nachbarin [geschwärzt] übergeben. Bearbeitet von [geschwärzt].
+======================================================================
+
+Antwort so versenden? [j/N] j
+  ← {"versendet": true, "empfaenger": "max.mustermann@example.com", "datei": "anfrage-01-antwort.txt"}
+
+Fertig nach 10 Tool-Aufrufen. Protokoll: logs/audit.jsonl

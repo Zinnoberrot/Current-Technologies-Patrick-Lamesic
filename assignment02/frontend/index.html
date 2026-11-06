@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSGVO Lernquiz</title>
+<style>
+  :root{
+    --paper:#F3F5F8; --card:#FFFFFF; --ink:#1B2A3A; --ink-soft:#4A5B70;
+    --line:#DCE2EA; --accent:#3B4CC0; --accent-soft:#EAECF8;
+    --ok:#1E8E4E; --ok-bg:#E7F5EC; --ok-line:#B7E0C4;
+    --no:#C6342E; --no-bg:#FBECEB; --no-line:#F0C2BF;
+    --amber:#B7791F; --amber-bg:#FBF3E2;
+    --shadow:0 1px 2px rgba(27,42,58,.06),0 8px 24px rgba(27,42,58,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5; -webkit-font-smoothing:antialiased;
+    padding:24px 16px 80px;
+  }
+  .wrap{max-width:760px;margin:0 auto}
+  h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif}
+  header.top{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:6px;flex-wrap:wrap}
+  header.top h1{font-size:1.5rem;margin:0;letter-spacing:-.01em}
+  .sub{color:var(--ink-soft);font-size:.9rem;margin:0 0 22px}
+
+  /* Start screen */
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:26px}
+  .panel h2{margin:0 0 4px;font-size:1.15rem}
+  .panel p.lead{margin:0 0 20px;color:var(--ink-soft);font-size:.92rem}
+  .choose{display:grid;gap:10px;margin-bottom:20px}
+  .opt-btn{display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;
+    background:#fff;border:1.5px solid var(--line);border-radius:11px;padding:14px 16px;cursor:pointer;font:inherit;color:inherit;transition:.15s}
+  .opt-btn:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .opt-btn.sel{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 3px rgba(59,76,192,.12)}
+  .opt-btn .t{font-weight:600}
+  .opt-btn .c{color:var(--ink-soft);font-size:.85rem}
+  .toggles{display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+  .tog{display:flex;align-items:center;gap:10px;font-size:.92rem;color:var(--ink-soft);cursor:pointer}
+  .tog input{width:18px;height:18px;accent-color:var(--accent);cursor:pointer}
+  .resume{font-size:.85rem;color:var(--ink-soft);margin:-8px 0 18px}
+  .resume b{color:var(--ink)}
+
+  button.primary{background:var(--accent);color:#fff;border:none;border-radius:11px;padding:13px 22px;
+    font:inherit;font-weight:600;cursor:pointer;transition:.15s;font-size:1rem}
+  button.primary:hover{filter:brightness(1.07)}
+  button.primary:disabled{opacity:.45;cursor:not-allowed}
+  button.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line);border-radius:11px;padding:12px 18px;font:inherit;font-weight:600;cursor:pointer;transition:.15s}
+  button.ghost:hover{border-color:var(--accent);color:var(--accent)}
+  button.ghost:disabled{opacity:.4;cursor:not-allowed}
+
+  /* Progress */
+  .home-link{background:none;border:none;padding:0;margin:0 0 14px;font:inherit;font-size:.88rem;font-weight:600;color:var(--accent);cursor:pointer}
+  .home-link:hover{text-decoration:underline}
+  .home-link:disabled{opacity:.4;cursor:not-allowed;text-decoration:none}
+  .progress-row{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+  .bar{flex:1;height:8px;background:#E4E9F0;border-radius:99px;overflow:hidden}
+  .bar > span{display:block;height:100%;background:var(--accent);border-radius:99px;transition:width .3s}
+  .count{font-size:.82rem;color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .score-pill{font-size:.82rem;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:99px;font-weight:600;white-space:nowrap}
+
+  /* Question card */
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:26px;margin-bottom:16px}
+  .eyebrow{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:8px}
+  .qcard h2{margin:0 0 6px;font-size:1.22rem;line-height:1.3}
+  .prompt{margin:0 0 8px;color:var(--ink-soft);font-size:.95rem}
+  .hint{font-size:.8rem;color:var(--ink-soft);margin:0 0 18px;font-style:italic}
+
+  .answers{display:grid;gap:10px}
+  .ans{display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);border-radius:11px;padding:13px 15px;cursor:pointer;transition:.15s;background:#fff}
+  .ans:hover{border-color:var(--accent)}
+  .ans.picked{border-color:var(--accent);background:var(--accent-soft)}
+  .ans .box{flex:none;width:22px;height:22px;border-radius:6px;border:2px solid var(--line);display:grid;place-items:center;margin-top:1px;font-size:.8rem;font-weight:700;color:#fff;background:#fff;transition:.15s}
+  .ans.picked .box{background:var(--accent);border-color:var(--accent)}
+  .ans .letter{font-weight:700;margin-right:2px}
+  .ans .txt{font-size:.95rem}
+  /* revealed states */
+  .ans.reveal{cursor:default}
+  .ans.reveal:hover{border-color:var(--line)}
+  .ans.correct{border-color:var(--ok-line);background:var(--ok-bg)}
+  .ans.correct .box{background:var(--ok);border-color:var(--ok)}
+  .ans.wrong{border-color:var(--no-line);background:var(--no-bg)}
+  .ans.wrong .box{background:var(--no);border-color:var(--no)}
+  .ans.reveal.correct:hover{border-color:var(--ok-line)}
+  .ans.reveal.wrong:hover{border-color:var(--no-line)}
+  .expl{margin-top:9px;font-size:.86rem;line-height:1.45;padding-left:0}
+  .expl.ok{color:#146c3a}
+  .expl.no{color:#a12a24}
+  .expl .tag{font-weight:700;margin-right:4px}
+
+  .verdict{margin:16px 0 4px;padding:13px 16px;border-radius:11px;font-size:.92rem;font-weight:600;display:flex;align-items:center;gap:10px}
+  .verdict.full{background:var(--ok-bg);color:#146c3a;border:1px solid var(--ok-line)}
+  .verdict.partial{background:var(--amber-bg);color:var(--amber);border:1px solid #EAD8A6}
+  .verdict.miss{background:var(--no-bg);color:#a12a24;border:1px solid var(--no-line)}
+
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:4px}
+  .nav .mid{font-size:.8rem;color:var(--ink-soft)}
+
+  /* summary */
+  .big-score{font-family:Georgia,serif;font-size:3rem;margin:6px 0 0;letter-spacing:-.02em}
+  .big-score small{font-size:1.1rem;color:var(--ink-soft)}
+  .sum-row{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+  .stat{flex:1;min-width:120px;background:#fff;border:1px solid var(--line);border-radius:11px;padding:14px}
+  .stat .n{font-family:Georgia,serif;font-size:1.6rem}
+  .stat .l{font-size:.78rem;color:var(--ink-soft)}
+  .foot{margin-top:34px;text-align:center;font-size:.76rem;color:var(--ink-soft)}
+  .hidden{display:none !important}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;font-size:.88rem;color:var(--ink-soft)}
+  .field input{font:inherit;font-size:.95rem;color:var(--ink);border:1.5px solid var(--line);border-radius:11px;padding:11px 14px;background:#fff}
+  .field input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,76,192,.12)}
+  .err{background:var(--no-bg);color:#a12a24;border:1px solid var(--no-line);border-radius:11px;padding:12px 14px;font-size:.88rem;margin-bottom:18px}
+  .qstat{margin:8px 0 0;font-size:.82rem;color:var(--ink-soft)}
+  .lb-wrap{margin-top:24px;text-align:left}
+  .lb-wrap h3{font-size:1rem;margin:0 0 10px}
+  table.lb{width:100%;border-collapse:collapse;font-size:.88rem}
+  table.lb th{text-align:left;font-weight:600;color:var(--ink-soft);font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--line);padding:6px 8px}
+  table.lb td{padding:8px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+  table.lb td:first-child{color:var(--ink-soft);width:2em}
+  .lb-empty{font-size:.86rem;color:var(--ink-soft);margin:0}
+  .save-note{font-size:.85rem;color:var(--ink-soft);margin:0 0 16px}
+  kbd{background:#EAEEF3;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;font-size:.78rem;font-family:inherit}
+  @media (max-width:520px){
+    body{padding:16px 12px 70px}
+    .panel,.qcard{padding:20px}
+    header.top h1{font-size:1.28rem}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>DSGVO Lernquiz</h1>
+    <span class="score-pill" id="topPart">DSGVO Lernquiz</span>
+  </header>
+  <p class="sub">60 Multiple-Select-Fragen mit Begründungen · pro Frage sind 1–4 Antworten richtig</p>
+
+  <!-- START -->
+  <section id="start" class="panel">
+    <h2 class="serif">Womit möchtest du üben?</h2>
+    <p class="lead">Wähle einen Teil, dann geht's los. Deine Auswahl kannst du jederzeit über „Neu starten" ändern.</p>
+    <div class="err hidden" id="errBox"></div>
+    <div class="choose" id="setChoose"></div>
+    <label class="field">Dein Name für die Bestenliste (optional)
+      <input id="playerName" maxlength="40" autocomplete="nickname" placeholder="z. B. Patrick">
+    </label>
+    <div class="toggles">
+      <label class="tog"><input type="checkbox" id="tgShuffleQ"> Fragen mischen</label>
+      <label class="tog"><input type="checkbox" id="tgShuffleA"> Antwortoptionen mischen</label>
+    </div>
+    <div class="resume hidden" id="resumeBox"></div>
+    <button class="primary" id="startBtn">Quiz starten</button>
+    <div class="lb-wrap"><h3 class="serif">Bestenliste</h3><div id="lbStart"></div></div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="hidden">
+    <button class="home-link" id="homeBtn">← Zur Startseite</button>
+    <div class="progress-row">
+      <div class="bar"><span id="barFill"></span></div>
+      <span class="count" id="countLbl">1 / 60</span>
+      <span class="score-pill" id="scoreLbl">0 richtig</span>
+    </div>
+    <div class="qcard" id="qcard"></div>
+    <div class="nav">
+      <button class="ghost" id="prevBtn">← Zurück</button>
+      <span class="mid" id="midLbl"></span>
+      <button class="primary" id="actionBtn">Antwort prüfen</button>
+    </div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section id="summary" class="panel hidden" style="text-align:center">
+    <h2 class="serif">Geschafft!</h2>
+    <div class="big-score" id="sumScore"></div>
+    <div class="sum-row" id="sumStats"></div>
+    <p class="save-note" id="saveNote"></p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <button class="primary" id="redoWrong">Nur falsche wiederholen</button>
+      <button class="ghost" id="restartBtn">Neu starten</button>
+    </div>
+    <div class="lb-wrap"><h3 class="serif">Bestenliste</h3><div id="lbSummary"></div></div>
+  </section>
+
+  <p class="foot">Fragen, Auswertung und Bestenliste kommen aus der API · laufende Runde wird im Browser zwischengespeichert</p>
+</div>
+
+<script>
+const L = ['A','B','C','D'];
+const $ = s => document.querySelector(s);
+// localStorage nur für die laufende runde, der rest liegt in der db
+const store = {
+  get(k){try{return JSON.parse(localStorage.getItem('dsgvo_'+k))}catch(e){return null}},
+  set(k,v){try{localStorage.setItem('dsgvo_'+k,JSON.stringify(v))}catch(e){}},
+  del(k){try{localStorage.removeItem('dsgvo_'+k)}catch(e){}}
+};
+
+async function api(path, opts={}){
+  const res = await fetch('/api'+path, {
+    headers: {'Content-Type':'application/json'},
+    ...opts,
+    body: opts.body ? JSON.stringify(opts.body) : undefined
+  });
+  const data = await res.json().catch(()=>({}));
+  if(!res.ok) throw new Error(data.error || ('HTTP '+res.status));
+  return data;
+}
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const setLabel = s => s==='all' ? 'Alle Fragen' : s.replace(/:.*/,'');
+
+let QUESTIONS=[], PARTS=[];
+let deck=[], idx=0, picks={}, checks={}, roundSet=null, busy=false;
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+function showError(msg){
+  const e=$('#errBox'); e.textContent=msg; e.classList.toggle('hidden',!msg);
+}
+
+// ---- Start screen ----
+function buildStart(){
+  const box = $('#setChoose'); box.innerHTML='';
+  const sets = [
+    {id:'all', t:'Alle Fragen', c:QUESTIONS.length+' Fragen · Teil 1 + Teil 2'},
+    ...PARTS.map(p=>({id:p.part, t:p.part.replace(/^Teil (\d+): /,'Teil $1 – '), c:p.count+' Fragen'}))
+  ];
+  let chosen = store.get('lastSet') || 'all';
+  if(!sets.some(s=>s.id===chosen)) chosen='all';
+  sets.forEach(s=>{
+    const b=document.createElement('button');
+    b.className='opt-btn'+(s.id===chosen?' sel':'');
+    b.innerHTML=`<span class="t">${s.t}</span><span class="c">${s.c}</span>`;
+    b.onclick=()=>{box.querySelectorAll('.opt-btn').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');window.selectedSet=s.id};
+    box.appendChild(b);
+  });
+  window.selectedSet = chosen;
+  $('#tgShuffleQ').checked = !!store.get('shuffleQ');
+  $('#tgShuffleA').checked = !!store.get('shuffleA');
+  $('#playerName').value = store.get('player') || '';
+
+  // resume?
+  const saved = store.get('progress');
+  const rb=$('#resumeBox');
+  if(saved && saved.deck && saved.idx < saved.deck.length){
+    rb.classList.remove('hidden');
+    rb.innerHTML = `Du hast eine laufende Runde bei <b>Frage ${saved.idx+1} von ${saved.deck.length}</b>. `+
+      `<a href="#" id="resumeLink" style="color:var(--accent);font-weight:600">Fortsetzen</a>`;
+    $('#resumeLink').onclick=(e)=>{e.preventDefault();resume(saved)};
+  } else rb.classList.add('hidden');
+  loadLeaderboard('#lbStart');
+}
+
+function buildDeck(){
+  let qs = selectedSet==='all' ? QUESTIONS.slice() : QUESTIONS.filter(q=>q.part===selectedSet);
+  if($('#tgShuffleQ').checked) qs=shuffle(qs);
+  deck = qs.map(q=>{
+    let order=[0,1,2,3];
+    if($('#tgShuffleA').checked) order=shuffle(order);
+    return {q, order};
+  });
+}
+
+function start(){
+  store.set('lastSet',selectedSet);
+  store.set('shuffleQ',$('#tgShuffleQ').checked);
+  store.set('shuffleA',$('#tgShuffleA').checked);
+  store.set('player',$('#playerName').value.trim());
+  buildDeck(); idx=0; picks={}; checks={}; roundSet=selectedSet;
+  showQuiz();
+}
+function resume(saved){
+  deck=saved.deck; idx=saved.idx; picks=saved.picks||{}; checks=saved.checks||{}; roundSet=saved.roundSet ?? null;
+  showQuiz();
+}
+function saveProgress(){
+  store.set('progress',{deck,idx,picks,checks,roundSet});
+}
+
+function showQuiz(){
+  $('#start').classList.add('hidden');
+  $('#summary').classList.add('hidden');
+  $('#quiz').classList.remove('hidden');
+  render();
+}
+
+const verdicts = () => Object.values(checks).map(c=>c.verdict);
+function scoreCount(){return verdicts().filter(r=>r==='full').length}
+
+function render(){
+  const item=deck[idx]; const q=item.q;
+  $('#topPart').textContent = q.part.replace(/:.*/,'');
+  $('#barFill').style.width = ((idx)/deck.length*100)+'%';
+  $('#countLbl').textContent = (idx+1)+' / '+deck.length;
+  $('#scoreLbl').textContent = scoreCount()+' richtig';
+
+  const res = checks[idx];
+  const isRev = !!res;
+  const myPicks = picks[idx] || [];
+  const card=$('#qcard');
+  const correctSet = new Set(isRev ? res.correct : []);
+
+  let html = `<div class="eyebrow">${q.part.replace(/^Teil (\d+):.*/,'Teil $1')} · Frage ${q.num}</div>`;
+  html += `<h2>${q.title}</h2>`;
+  if(q.prompt) html += `<p class="prompt">${q.prompt}</p>`;
+  html += `<p class="hint">Mehrfachauswahl – 1 bis 4 Antworten können richtig sein.</p>`;
+  html += `<div class="answers">`;
+  item.order.forEach(oi=>{
+    const letter=L[oi];
+    const text=q.options[letter];
+    const picked=myPicks.includes(letter);
+    let cls='ans', boxmark = picked?'✓':'';
+    if(isRev){
+      cls+=' reveal';
+      if(correctSet.has(letter)){cls+=' correct';boxmark='✓';}
+      else{cls+=picked?' wrong':''; boxmark=picked?'✕':'';}
+    }else if(picked){cls+=' picked';}
+    html += `<div class="${cls}" data-letter="${letter}">
+      <span class="box">${boxmark}</span>
+      <span class="txt"><span class="letter">${letter})</span> ${text}`;
+    if(isRev){
+      const e=res.expl[letter];
+      const ok=e&&e.correct;
+      html += `<div class="expl ${ok?'ok':'no'}"><span class="tag">${ok?'✓ richtig':'✕ falsch'}</span>${e?e.text:''}</div>`;
+    }
+    html += `</span></div>`;
+  });
+  html += `</div>`;
+
+  if(isRev){
+    const map={full:['full','Alles richtig – perfekt markiert.'],
+               partial:['partial','Teilweise richtig – nicht ganz die richtige Kombination.'],
+               miss:['miss','Daneben – schau dir die Begründungen an.']};
+    const [c,txt]=map[res.verdict];
+    html += `<div class="verdict ${c}">${txt}</div>`;
+    const s=res.stats;
+    if(s && s.attempts) html += `<p class="qstat">${Math.round(s.full/s.attempts*100)} % von ${s.attempts} Versuch${s.attempts===1?'':'en'} insgesamt waren komplett richtig.</p>`;
+  }
+  card.innerHTML=html;
+
+  if(!isRev){
+    card.querySelectorAll('.ans').forEach(el=>{
+      el.onclick=()=>togglePick(el.dataset.letter);
+    });
+  }
+
+  // buttons
+  $('#prevBtn').disabled = idx===0;
+  $('#homeBtn').disabled = busy;
+  const act=$('#actionBtn');
+  if(!isRev){
+    act.textContent= busy ? 'Wird geprüft …' : 'Antwort prüfen';
+    act.disabled = busy || myPicks.length===0;
+  }else{
+    act.disabled=false;
+    act.textContent = idx===deck.length-1 ? 'Ergebnis ansehen' : 'Nächste Frage →';
+  }
+  $('#midLbl').textContent = isRev? '' : 'Auswahl treffen';
+  saveProgress();
+}
+
+function togglePick(letter){
+  if(checks[idx] || busy) return;
+  const cur=new Set(picks[idx]||[]);
+  cur.has(letter)?cur.delete(letter):cur.add(letter);
+  picks[idx]=[...cur];
+  render();
+}
+
+// geprüft wird am server, die lösung gibt es erst danach
+async function check(){
+  if(busy) return;
+  busy=true; render();
+  const at=idx;
+  try{
+    checks[at] = await api('/check',{method:'POST',body:{questionId:deck[at].q.id, picks:picks[at]}});
+  }catch(e){
+    alert('Antwort konnte nicht geprüft werden: '+e.message);
+  }finally{
+    busy=false; render();
+  }
+}
+
+function action(){
+  if(!checks[idx]){check();return;}
+  if(idx===deck.length-1){showSummary();}
+  else{idx++;render();}
+}
+
+async function showSummary(){
+  $('#barFill').style.width='100%';
+  $('#quiz').classList.add('hidden');
+  const total=deck.length, full=scoreCount();
+  const partial=verdicts().filter(r=>r==='partial').length;
+  const miss=verdicts().filter(r=>r==='miss').length;
+  const pct=Math.round(full/total*100);
+  $('#sumScore').innerHTML = `${full}<small> / ${total} vollständig richtig (${pct}%)</small>`;
+  $('#sumStats').innerHTML =
+    `<div class="stat"><div class="n" style="color:var(--ok)">${full}</div><div class="l">komplett richtig</div></div>`+
+    `<div class="stat"><div class="n" style="color:var(--amber)">${partial}</div><div class="l">teilweise richtig</div></div>`+
+    `<div class="stat"><div class="n" style="color:var(--no)">${miss}</div><div class="l">daneben</div></div>`;
+  $('#redoWrong').style.display = (partial+miss)>0 ? '' : 'none';
+  $('#summary').classList.remove('hidden');
+  store.del('progress');
+
+  const player=store.get('player');
+  const note=$('#saveNote');
+  if(roundSet && player){
+    try{
+      await api('/results',{method:'POST',body:{player,questionSet:roundSet,total,full,partial,miss}});
+      note.textContent=`Ergebnis für „${player}" gespeichert.`;
+    }catch(e){ note.textContent='Ergebnis konnte nicht gespeichert werden: '+e.message; }
+  }else{
+    note.textContent = roundSet ? 'Kein Name angegeben – Ergebnis wurde nicht in die Bestenliste eingetragen.'
+                                : 'Wiederholungsrunden zählen nicht für die Bestenliste.';
+  }
+  loadLeaderboard('#lbSummary');
+}
+
+async function loadLeaderboard(sel){
+  const el=$(sel);
+  try{
+    const rows=await api('/leaderboard');
+    if(!rows.length){el.innerHTML='<p class="lb-empty">Noch keine Einträge.</p>';return;}
+    el.innerHTML='<table class="lb"><thead><tr><th>#</th><th>Name</th><th>Fragen</th><th>Ergebnis</th></tr></thead><tbody>'+
+      rows.map((r,i)=>`<tr><td>${i+1}</td><td>${esc(r.player)}</td><td>${esc(setLabel(r.question_set))}</td>`+
+        `<td>${r.full_count}/${r.total} (${r.pct} %)</td></tr>`).join('')+'</tbody></table>';
+  }catch(e){ el.innerHTML='<p class="lb-empty">Bestenliste nicht verfügbar.</p>'; }
+}
+
+function redoWrong(){
+  const wrongDeck = deck.filter((d,i)=>!checks[i] || checks[i].verdict!=='full');
+  if(!wrongDeck.length){restart();return;}
+  deck=wrongDeck; idx=0; picks={}; checks={}; roundSet=null;
+  $('#summary').classList.add('hidden');
+  showQuiz();
+}
+
+// zurück zur startseite, runde bleibt gespeichert
+function goHome(){
+  if(busy) return;
+  saveProgress();
+  $('#quiz').classList.add('hidden');
+  $('#start').classList.remove('hidden');
+  $('#topPart').textContent='DSGVO Lernquiz';
+  buildStart();
+}
+
+function restart(){
+  store.del('progress');
+  $('#quiz').classList.add('hidden');
+  $('#summary').classList.add('hidden');
+  $('#start').classList.remove('hidden');
+  $('#topPart').textContent='DSGVO Lernquiz';
+  buildStart();
+}
+
+// events
+$('#startBtn').onclick=start;
+$('#prevBtn').onclick=()=>{if(idx>0 && !busy){idx--;render()}};
+$('#actionBtn').onclick=action;
+$('#restartBtn').onclick=restart;
+$('#homeBtn').onclick=goHome;
+$('#redoWrong').onclick=redoWrong;
+
+document.addEventListener('keydown',e=>{
+  if($('#quiz').classList.contains('hidden'))return;
+  const k=e.key.toLowerCase();
+  if(['1','2','3','4','a','b','c','d'].includes(k)){
+    const map={'1':'A','2':'B','3':'C','4':'D','a':'A','b':'B','c':'C','d':'D'};
+    if(!checks[idx]){togglePick(map[k]);}
+    e.preventDefault();
+  }else if(e.key==='Enter'){
+    if(!$('#actionBtn').disabled) action();
+    e.preventDefault();
+  }else if(e.key==='ArrowLeft'){if(idx>0 && !busy){idx--;render()}}
+});
+
+// fragen von der api laden
+(async function boot(){
+  $('#startBtn').disabled=true;
+  try{
+    [QUESTIONS, PARTS] = await Promise.all([api('/questions'), api('/parts')]);
+    $('#startBtn').disabled=false;
+    showError('');
+  }catch(e){
+    showError('Die API ist nicht erreichbar ('+e.message+'). Läuft „docker compose up"?');
+  }
+  buildStart();
+})();
+</script>
+</body>
+</html>

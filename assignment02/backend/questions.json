@@ -1,0 +1,2100 @@
+[
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 1,
+  "title": "Was ist die DSGVO?",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "In Kraft seit dem 25. Mai 2018.",
+   "B": "Sie muss in jedem Mitgliedstaat durch ein eigenes nationales Gesetz umgesetzt werden.",
+   "C": "Sie ersetzt die Datenschutzrichtlinie 95/46/EG.",
+   "D": "Sie umfasst 99 Artikel."
+  },
+  "correct": [
+   "A",
+   "C",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "In Kraft seit 25.05.2018."
+   },
+   "B": {
+    "correct": false,
+    "text": "Eine EU-Verordnung gilt unmittelbar in allen Mitgliedstaaten – ein nationales Umsetzungsgesetz ist gerade NICHT nötig."
+   },
+   "C": {
+    "correct": true,
+    "text": "Sie löste die alte Richtlinie 95/46/EG ab."
+   },
+   "D": {
+    "correct": true,
+    "text": "99 Artikel und 173 Erwägungsgründe."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 2,
+  "title": "Räumlicher Anwendungsbereich (Art. 3)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Niederlassungsprinzip: Verantwortlicher/Auftragsverarbeiter sitzt in der EU.",
+   "B": "Marktortprinzip: Gilt auch für Nicht-EU-Unternehmen, die Personen in der EU Waren/Dienste anbieten oder deren Verhalten beobachten.",
+   "C": "Die DSGVO gilt ausschließlich für Unternehmen mit Sitz in der EU.",
+   "D": "Ein US-Unternehmen mit europäischen Kund:innen unterliegt der DSGVO."
+  },
+  "correct": [
+   "A",
+   "B",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Niederlassungsprinzip."
+   },
+   "B": {
+    "correct": true,
+    "text": "Marktortprinzip."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – genau deshalb gilt die DSGVO auch für Unternehmen OHNE EU-Sitz."
+   },
+   "D": {
+    "correct": true,
+    "text": "Folge des Marktortprinzips."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 3,
+  "title": "Marktortprinzip (Szenario)",
+  "prompt": "Ein US-Unternehmen ohne EU-Niederlassung betreibt einen Online-Shop für Kund:innen in Österreich. Was gilt?",
+  "options": {
+   "A": "Die DSGVO gilt (Marktortprinzip).",
+   "B": "Die DSGVO gilt nicht, weil kein EU-Sitz besteht.",
+   "C": "Es gilt nur US-Recht.",
+   "D": "Datenschutzrecht ist hier irrelevant."
+  },
+  "correct": [
+   "A"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Da Waren an Personen in der EU angeboten werden, greift das Marktortprinzip."
+   },
+   "B": {
+    "correct": false,
+    "text": "Falsch – ein EU-Sitz ist keine Voraussetzung."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – die DSGVO gilt zusätzlich."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Datenschutz ist hier zentral."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 4,
+  "title": "Personenbezogene Daten (Art. 4 Nr. 1)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Name und E-Mail-Adresse zählen dazu.",
+   "B": "IP-Adresse und Standortdaten zählen dazu.",
+   "C": "Pseudonymisierte Daten gelten NICHT als personenbezogen.",
+   "D": "Online-Kennungen (z. B. Cookie-ID) zählen dazu."
+  },
+  "correct": [
+   "A",
+   "B",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Klassische Beispiele."
+   },
+   "B": {
+    "correct": true,
+    "text": "Auch IP-Adresse und Standort sind personenbezogen."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – Achtung: Auch pseudonymisierte Daten sind personenbezogen!"
+   },
+   "D": {
+    "correct": true,
+    "text": "Online-Kennungen ebenfalls."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 5,
+  "title": "Verarbeitung (Art. 4 Nr. 2)",
+  "prompt": "Was fällt unter „Verarbeitung“?",
+  "options": {
+   "A": "Erheben und Erfassen.",
+   "B": "Speichern und Ändern.",
+   "C": "Abfragen und Löschen.",
+   "D": "Nur das dauerhafte Speichern, nicht aber Abfragen oder Löschen."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Teil von „jedem Vorgang“."
+   },
+   "B": {
+    "correct": true,
+    "text": "Ebenfalls Verarbeitung."
+   },
+   "C": {
+    "correct": true,
+    "text": "Ebenfalls Verarbeitung."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – „Verarbeitung“ ist JEDER Vorgang, inkl. Abfragen und Löschen."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 6,
+  "title": "Verantwortlicher vs. Auftragsverarbeiter (Art. 4 Nr. 7/8)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Der Verantwortliche entscheidet über Zweck und Mittel der Verarbeitung.",
+   "B": "Ein Cloud-Anbieter/SaaS-Tool ist typischerweise Auftragsverarbeiter.",
+   "C": "Die betroffene Person ist die natürliche Person, deren Daten verarbeitet werden.",
+   "D": "Der Auftragsverarbeiter legt eigenständig Zweck und Mittel fest."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Verantwortlicher = bestimmt Zweck & Mittel (typisch: euer Unternehmen/Auftraggeber)."
+   },
+   "B": {
+    "correct": true,
+    "text": "Cloud/SaaS/externes Rechenzentrum = Auftragsverarbeiter."
+   },
+   "C": {
+    "correct": true,
+    "text": "Betroffene Person = eure User."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Zweck und Mittel bestimmt der Verantwortliche, nicht der Auftragsverarbeiter."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 7,
+  "title": "Besondere Kategorien (Art. 9)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Gesundheitsdaten zählen zu den besonderen Kategorien.",
+   "B": "Ihre Verarbeitung ist grundsätzlich verboten, außer bei einem Ausnahmetatbestand (Art. 9 Abs. 2).",
+   "C": "Religiöse Überzeugungen und biometrische Daten (zur Identifizierung) zählen dazu.",
+   "D": "Die normale Wohnadresse ist eine besondere Kategorie."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Gesundheitsdaten."
+   },
+   "B": {
+    "correct": true,
+    "text": "Grundsätzliches Verarbeitungsverbot mit Ausnahmen."
+   },
+   "C": {
+    "correct": true,
+    "text": "Auch religiöse Überzeugungen, biometrische & genetische Daten, politische Meinungen, Gewerkschaftszugehörigkeit, Sexualleben."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – die Wohnadresse ist ein „normales“ personenbezogenes Datum, keine besondere Kategorie."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 8,
+  "title": "Art. 9 in der Praxis",
+  "prompt": "Welche Zuordnungen sind korrekt?",
+  "options": {
+   "A": "Gesundheits-App mit Herzfrequenz/Schlaftracking → Gesundheitsdaten.",
+   "B": "Face-ID / Fingerabdruck-Login → biometrische Daten.",
+   "C": "Bewerbungsfoto → potenziell rassische/ethnische Herkunft ableitbar.",
+   "D": "Fitness-Tracker mit BMI ist datenschutzrechtlich völlig unkritisch."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Gesundheitsdaten."
+   },
+   "B": {
+    "correct": true,
+    "text": "Biometrische Daten."
+   },
+   "C": {
+    "correct": true,
+    "text": "Über ein Foto kann u. a. die ethnische Herkunft ableitbar sein."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Kalorienverbrauch + BMI sind ein Graubereich, tendenziell Gesundheitsdaten, also nicht unkritisch."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 9,
+  "title": "Grundsatz 1: Rechtmäßigkeit, Treu & Glauben, Transparenz (Art. 5)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Die Verarbeitung muss für die betroffene Person nachvollziehbar sein.",
+   "B": "Heimliches Tracking (versteckte Analytics ohne Consent) ist zulässig.",
+   "C": "User müssen verstehen: was, warum, wie lange.",
+   "D": "Dark Patterns sind ein zulässiges Mittel transparenter Kommunikation."
+  },
+  "correct": [
+   "A",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Nachvollziehbarkeit."
+   },
+   "B": {
+    "correct": false,
+    "text": "Falsch – kein heimliches Tracking."
+   },
+   "C": {
+    "correct": true,
+    "text": "Transparenz über Art, Zweck, Dauer."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Dark Patterns sind das Gegenteil von Transparenz."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 10,
+  "title": "Grundsatz 2: Zweckbindung",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Daten nur für festgelegte, eindeutige und legitime Zwecke erheben.",
+   "B": "Registrierungsdaten dürfen ohne separate Einwilligung fürs Marketing weiterverwendet werden.",
+   "C": "Weiterverwendung für andere Zwecke nur mit neuer Rechtsgrundlage.",
+   "D": "API-Endpunkte sollten nur die für den jeweiligen Zweck nötigen Daten liefern."
+  },
+  "correct": [
+   "A",
+   "C",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Zweckfestlegung."
+   },
+   "B": {
+    "correct": false,
+    "text": "Falsch – Account-Daten fürs Marketing zu nutzen, braucht eine separate Einwilligung."
+   },
+   "C": {
+    "correct": true,
+    "text": "Neue Zwecke brauchen neue Rechtsgrundlage."
+   },
+   "D": {
+    "correct": true,
+    "text": "Zweckbindung auch auf API-Ebene."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 11,
+  "title": "Grundsatz 3: Datenminimierung",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "„So viel wie nötig, so wenig wie möglich.“",
+   "B": "Beim Registrierungsformular vorsorglich Geburtsdatum, Adresse und Telefon „für später“ abfragen.",
+   "C": "API-Responses: nur die Felder zurückgeben, die der Client braucht.",
+   "D": "Gekürzte statt vollständige IP-Adressen loggen, wenn das reicht."
+  },
+  "correct": [
+   "A",
+   "C",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Leitsatz der Datenminimierung."
+   },
+   "B": {
+    "correct": false,
+    "text": "Falsch – Daten „auf Vorrat“ widersprechen der Datenminimierung. (Testfrage: „Brauche ich das JETZT für DIESEN Zweck?“)"
+   },
+   "C": {
+    "correct": true,
+    "text": "Nur benötigte Felder ausliefern."
+   },
+   "D": {
+    "correct": true,
+    "text": "So wenig wie möglich loggen."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 12,
+  "title": "Grundsatz 4: Richtigkeit",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Daten müssen sachlich richtig und auf dem neuesten Stand sein.",
+   "B": "Unrichtige Daten sind unverzüglich zu berichtigen oder zu löschen.",
+   "C": "Das Gegenstück ist das Recht auf Berichtigung (Art. 16).",
+   "D": "Einmal erfasste Daten müssen nie aktualisiert werden."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Richtigkeit & Aktualität."
+   },
+   "B": {
+    "correct": true,
+    "text": "Unrichtige Daten berichtigen/löschen."
+   },
+   "C": {
+    "correct": true,
+    "text": "Korrespondierendes Betroffenenrecht: Art. 16."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – z. B. Self-Service-Profil, Adress-Validierung, Sync-Prozesse halten Daten aktuell."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 13,
+  "title": "Grundsatz 5: Speicherbegrenzung",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Daten nur so lange speichern, wie der Zweck es erfordert.",
+   "B": "Danach: löschen oder anonymisieren.",
+   "C": "Rechnungsdaten meist 7 Jahre wegen Steuerrecht.",
+   "D": "Daten sollten grundsätzlich unbegrenzt aufbewahrt werden."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Speicherdauer an Zweck koppeln."
+   },
+   "B": {
+    "correct": true,
+    "text": "Danach löschen/anonymisieren."
+   },
+   "C": {
+    "correct": true,
+    "text": "Gesetzliche Aufbewahrungsfristen dokumentieren (Rechnungen ~7 Jahre)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – unbegrenzte Speicherung verstößt gegen die Speicherbegrenzung."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 14,
+  "title": "Grundsatz 6: Integrität und Vertraulichkeit",
+  "prompt": "Welche technischen Maßnahmen passen dazu?",
+  "options": {
+   "A": "HTTPS/TLS überall.",
+   "B": "Passwörter hashen, nie im Klartext speichern.",
+   "C": "Principle of Least Privilege bei DB-Zugriffen.",
+   "D": "Es genügt, sich gegen externe Hacker zu schützen; interne Zugriffe sind unkritisch."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Transportverschlüsselung."
+   },
+   "B": {
+    "correct": true,
+    "text": "Passwort-Hashing."
+   },
+   "C": {
+    "correct": true,
+    "text": "Minimale Zugriffsrechte."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – auch interne Zugriffe sind zu begrenzen. (Konkretisiert durch Art. 32 TOM.)"
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 15,
+  "title": "Grundsatz 7: Rechenschaftspflicht",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Der Verantwortliche muss die Einhaltung der Grundsätze nachweisen können.",
+   "B": "Es reicht, compliant zu sein – belegen muss man es nicht.",
+   "C": "Ein Verarbeitungsverzeichnis (Art. 30) gehört zur Umsetzung.",
+   "D": "Eine Datenschutz-Folgenabschätzung (Art. 35) ist bei Hochrisiko-Verarbeitung vorgesehen."
+  },
+  "correct": [
+   "A",
+   "C",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Nachweisbarkeit."
+   },
+   "B": {
+    "correct": false,
+    "text": "Falsch – nicht nur compliant SEIN, sondern es auch BELEGEN können."
+   },
+   "C": {
+    "correct": true,
+    "text": "Verarbeitungsverzeichnis, Audit-Logs, Consent-Dokumentation."
+   },
+   "D": {
+    "correct": true,
+    "text": "DSFA bei Hochrisiko."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 16,
+  "title": "Rechtsgrundlagen-Übersicht (Art. 6)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Jede Datenverarbeitung braucht mindestens eine Rechtsgrundlage.",
+   "B": "„Wir brauchen die Daten halt.“ ist eine gültige Rechtsgrundlage.",
+   "C": "Einwilligung und Vertragserfüllung gehören zu den sechs Rechtsgrundlagen.",
+   "D": "Berechtigtes Interesse gehört zu den sechs Rechtsgrundlagen."
+  },
+  "correct": [
+   "A",
+   "C",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Ohne Rechtsgrundlage keine Verarbeitung."
+   },
+   "B": {
+    "correct": false,
+    "text": "Falsch – ein bloßes Bedürfnis ist keine Rechtsgrundlage."
+   },
+   "C": {
+    "correct": true,
+    "text": "Einwilligung (lit. a), Vertragserfüllung (lit. b)."
+   },
+   "D": {
+    "correct": true,
+    "text": "Berechtigtes Interesse (lit. f). Die 6: Einwilligung, Vertrag, rechtliche Verpflichtung, lebenswichtige Interessen, öffentliches Interesse, berechtigtes Interesse."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 17,
+  "title": "Einwilligung (Art. 6 Abs. 1 lit. a / Art. 7)",
+  "prompt": "Welche Anforderungen muss eine gültige Einwilligung erfüllen?",
+  "options": {
+   "A": "Freiwillig.",
+   "B": "Informiert.",
+   "C": "Spezifisch (pro Zweck eine eigene Einwilligung).",
+   "D": "Widerrufbar (so einfach wie die Erteilung)."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Teil des Merksatzes."
+   },
+   "B": {
+    "correct": true,
+    "text": "Teil des Merksatzes."
+   },
+   "C": {
+    "correct": true,
+    "text": "Teil des Merksatzes."
+   },
+   "D": {
+    "correct": true,
+    "text": "Teil des Merksatzes. Merksatz: freiwillig – informiert – spezifisch – widerrufbar. (Hier sind ALLE vier richtig.)"
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 18,
+  "title": "Kopplungsverbot & Widerruf",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Die Kernfunktion muss auch ohne Marketing-Consent nutzbar sein.",
+   "B": "Der Widerruf muss so einfach sein wie die Erteilung.",
+   "C": "Eine vorausgefüllte Consent-Checkbox erfüllt die Anforderung an Freiwilligkeit.",
+   "D": "Die Einwilligung kann jederzeit widerrufen werden."
+  },
+  "correct": [
+   "A",
+   "B",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Kopplungsverbot."
+   },
+   "B": {
+    "correct": true,
+    "text": "Widerruf so einfach wie Erteilung."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – vorausgefüllte Checkboxen (Opt-out) sind unzulässig; nötig ist aktives Opt-in."
+   },
+   "D": {
+    "correct": true,
+    "text": "Jederzeitiger Widerruf."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 19,
+  "title": "Vertragserfüllung (Art. 6 Abs. 1 lit. b)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Verarbeitung der Lieferadresse, um eine Bestellung zu versenden.",
+   "B": "Anlegen eines User-Accounts, ohne den der Dienst nicht nutzbar ist.",
+   "C": "Für die Vertragserfüllung ist zusätzlich immer eine Einwilligung nötig.",
+   "D": "„Erforderlich“ ist eng auszulegen – nur wirklich nötige Daten."
+  },
+  "correct": [
+   "A",
+   "B",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Lieferadresse für den Versand."
+   },
+   "B": {
+    "correct": true,
+    "text": "Account für die Diensterbringung."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – bei lit. b ist KEINE zusätzliche Einwilligung nötig."
+   },
+   "D": {
+    "correct": true,
+    "text": "Enge Auslegung von „erforderlich“."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 20,
+  "title": "Rechtsgrundlagen lit. c–e",
+  "prompt": "Welche Zuordnungen sind korrekt?",
+  "options": {
+   "A": "Rechtliche Verpflichtung (lit. c): z. B. Rechnungsdaten 7 Jahre wegen Steuerrecht.",
+   "B": "Lebenswichtige Interessen (lit. d): z. B. Notfall-App, die den Standort an den Rettungsdienst sendet.",
+   "C": "Öffentliches Interesse (lit. e): z. B. Behörden-Software, Meldewesen, amtliche Statistik.",
+   "D": "Lebenswichtige Interessen sind in der Softwareentwicklung der häufigste Fall."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Gesetzliche Aufbewahrungspflicht."
+   },
+   "B": {
+    "correct": true,
+    "text": "Medizinischer Notfall."
+   },
+   "C": {
+    "correct": true,
+    "text": "Hoheitliche/öffentliche Aufgaben."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – lebenswichtige Interessen sind in der Softwareentwicklung eher selten relevant."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 21,
+  "title": "Berechtigtes Interesse (Art. 6 Abs. 1 lit. f)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Es ist eine Interessenabwägung gegen die Grundrechte der betroffenen Person nötig.",
+   "B": "Betrugserkennung und -prävention ist ein typisches Beispiel.",
+   "C": "IT-Sicherheits-Logging (z. B. Failed-Login-Versuche) ist ein typisches Beispiel.",
+   "D": "Berechtigtes Interesse gilt automatisch ohne jede Abwägung."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Interessenabwägung (Dreistufentest: berechtigtes Interesse? → Erforderlichkeit? → Interessenabwägung?)."
+   },
+   "B": {
+    "correct": true,
+    "text": "Betrugsprävention."
+   },
+   "C": {
+    "correct": true,
+    "text": "Security-Logging."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – ohne Abwägung geht es gerade nicht."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 22,
+  "title": "Consent-Management (Praxis-Checkliste)",
+  "prompt": "Welche Punkte gehören dazu?",
+  "options": {
+   "A": "Opt-in statt Opt-out (keine vorausgefüllten Checkboxen).",
+   "B": "Granulare Einwilligung pro Zweck.",
+   "C": "Einwilligung mit Zeitstempel, Version und Zweck speichern.",
+   "D": "Ablehnen darf ruhig schwieriger sein als Akzeptieren."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Aktives Opt-in."
+   },
+   "B": {
+    "correct": true,
+    "text": "Pro Zweck getrennt."
+   },
+   "C": {
+    "correct": true,
+    "text": "Nachweisbare Dokumentation."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Ablehnen muss genauso einfach sein wie Akzeptieren."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 23,
+  "title": "Breakout AlpenShop",
+  "prompt": "Welche Einordnungen des Praktikanten sind FEHLERHAFT?",
+  "options": {
+   "A": "Newsletter an alle Käufer:innen auf lit. b (Vertragserfüllung) stützen.",
+   "B": "Failed-Login-Logging auf lit. a (Einwilligung) stützen.",
+   "C": "Standardmäßig aktivierte Tracking-Cookies auf lit. f stützen.",
+   "D": "Lieferadresse für den Versand auf lit. b (Vertragserfüllung) stützen."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Fehlerhaft – Newsletter ist Marketing → braucht Einwilligung (lit. a), nicht lit. b."
+   },
+   "B": {
+    "correct": true,
+    "text": "Fehlerhaft – Sicherheits-Logging ist berechtigtes Interesse (lit. f), keine Einwilligung."
+   },
+   "C": {
+    "correct": true,
+    "text": "Fehlerhaft – Tracking-Cookies brauchen aktives Opt-in (lit. a), nicht lit. f mit Voraktivierung."
+   },
+   "D": {
+    "correct": false,
+    "text": "KORREKT zugeordnet (Lieferadresse = lit. b) – daher NICHT zu nennen."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 24,
+  "title": "Betroffenenrechte (Überblick, Art. 12–23)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Auskunftsrecht (Art. 15).",
+   "B": "Recht auf Löschung / „Recht auf Vergessenwerden“ (Art. 17).",
+   "C": "Recht auf Datenübertragbarkeit (Art. 20).",
+   "D": "Die Frist zur Beantwortung beträgt 6 Monate."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Art. 15."
+   },
+   "B": {
+    "correct": true,
+    "text": "Art. 17."
+   },
+   "C": {
+    "correct": true,
+    "text": "Art. 20 (weitere: Berichtigung Art. 16, Einschränkung Art. 18, Widerspruch Art. 21, Profiling Art. 22)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – die Frist beträgt 1 Monat (Art. 12 Abs. 3)."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 25,
+  "title": "Auskunft (Art. 15) & Datenübertragbarkeit (Art. 20)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Auskunftsrecht: User hat Recht auf Kopie aller über ihn/sie gespeicherten Daten.",
+   "B": "Die Auskunft umfasst auch Verarbeitungszwecke, Empfänger und Speicherdauer.",
+   "C": "Datenübertragbarkeit: Bereitstellung in strukturiertem, maschinenlesbarem Format (z. B. JSON, CSV).",
+   "D": "Eine direkte Übermittlung an einen anderen Verantwortlichen ist bei Art. 20 grundsätzlich ausgeschlossen."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Datenkopie (technisch: Export-Funktion)."
+   },
+   "B": {
+    "correct": true,
+    "text": "Inkl. Zwecke, Empfänger, Speicherdauer."
+   },
+   "C": {
+    "correct": true,
+    "text": "Maschinenlesbares Format."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – die direkte Übermittlung an einen anderen Verantwortlichen ist gerade vorgesehen, wenn technisch machbar."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 26,
+  "title": "Löschung (Art. 17) & Einschränkung (Art. 18)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Löschung kann verlangt werden, wenn der Zweck entfallen oder die Einwilligung widerrufen ist.",
+   "B": "Gesetzliche Aufbewahrungspflichten können der Löschung entgegenstehen.",
+   "C": "Bei Art. 18 werden Daten gesperrt, aber nicht gelöscht (z. B. während der Prüfung eines Löschantrags).",
+   "D": "Das Recht auf Löschung gilt absolut und kennt keine Ausnahmen."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Löschgründe (Zweck entfallen, Widerruf, unrechtmäßige Verarbeitung)."
+   },
+   "B": {
+    "correct": true,
+    "text": "Ausnahmen: Aufbewahrungspflichten, Meinungsfreiheit, öffentliches Interesse."
+   },
+   "C": {
+    "correct": true,
+    "text": "Einschränkung = sperren statt löschen."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – es gibt klare Ausnahmen (siehe B)."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 27,
+  "title": "Widerspruch (Art. 21) & automatisierte Entscheidungen/Profiling (Art. 22)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Gegen eine Verarbeitung auf Basis berechtigten Interesses kann widersprochen werden.",
+   "B": "Bei Direktwerbung ist der Widerspruch immer und ohne Einschränkung zu beachten.",
+   "C": "User haben das Recht, nicht einer ausschließlich automatisierten Entscheidung mit rechtlicher Wirkung unterworfen zu werden.",
+   "D": "Kredit-Scoring und automatisierte Bewerbungsauswahl sind nur Beispiele für das Auskunftsrecht."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Widerspruch gegen lit.-f-Verarbeitung."
+   },
+   "B": {
+    "correct": true,
+    "text": "Direktwerbung: Widerspruch immer zu beachten."
+   },
+   "C": {
+    "correct": true,
+    "text": "Kern von Art. 22."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Kredit-Scoring, automatisierte Bewerbungsauswahl und personalisierte Preise sind Beispiele für Art. 22 (Profiling), nicht fürs Auskunftsrecht."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 28,
+  "title": "Österreichisches DSG: Verhältnis zur DSGVO",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Die DSGVO ist als EU-Verordnung direkt anwendbar.",
+   "B": "Das DSG ist eine nationale Ergänzung über „Öffnungsklauseln“.",
+   "C": "Bei Widerspruch zwischen DSGVO und DSG hat das DSG Vorrang.",
+   "D": "Das DSG regelt u. a. die Datenschutzbehörde und die Bildverarbeitung (§ 12)."
+  },
+  "correct": [
+   "A",
+   "B",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Direkt anwendbar."
+   },
+   "B": {
+    "correct": true,
+    "text": "Ergänzt, ersetzt nicht."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – bei Widerspruch hat die DSGVO Vorrang."
+   },
+   "D": {
+    "correct": true,
+    "text": "DSB, Beschäftigtendatenschutz, Forschung/Statistik, Bildverarbeitung."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 29,
+  "title": "DSG: Öffnungsklauseln",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "In Österreich liegt das Einwilligungsalter bei 14 Jahren (statt 16 wie in der DSGVO vorgesehen).",
+   "B": "Beschäftigtendatenschutz wird national geregelt.",
+   "C": "Es gibt Erleichterungen für wissenschaftliche Forschung & Statistik.",
+   "D": "Österreich hat das Einwilligungsalter auf 18 Jahre angehoben."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Einwilligungsalter 14."
+   },
+   "B": {
+    "correct": true,
+    "text": "Arbeitnehmer:innen-Daten, Betriebsvereinbarungen."
+   },
+   "C": {
+    "correct": true,
+    "text": "Forschungs-/Statistik-Erleichterungen (auch: öffentlicher Bereich, Bildverarbeitung)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – das Alter ist 14, nicht 18."
+   }
+  }
+ },
+ {
+  "part": "Teil 1: Datenschutzrecht",
+  "num": 30,
+  "title": "Strafbestimmungen & Datenschutzbehörde",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "DSGVO-Bußgelder bis 20 Mio. € bzw. 4 % des Jahresumsatzes bei schweren Verstößen.",
+   "B": "Bis 10 Mio. € bzw. 2 % bei leichteren Verstößen; es gilt jeweils der höhere Betrag.",
+   "C": "Das DSG sieht bei Datenverarbeitung in Gewinn- oder Schädigungsabsicht Freiheitsstrafen bis 1 Jahr vor.",
+   "D": "Gegen Entscheidungen der DSB ist überhaupt kein Rechtsweg möglich."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Art. 83: schwere Verstöße bis 20 Mio. € / 4 %."
+   },
+   "B": {
+    "correct": true,
+    "text": "Leichtere Verstöße bis 10 Mio. € / 2 %; maßgeblich ist der höhere Betrag."
+   },
+   "C": {
+    "correct": true,
+    "text": "§§ 62/63 DSG: bis 1 Jahr Freiheitsstrafe."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Beschwerdeweg Betroffene → DSB → ggf. Bundesverwaltungsgericht; die DSB-Beschwerde ist zudem kostenlos."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 1,
+  "title": "Privacy by Design (Art. 25) – Überblick",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Art. 25 verlangt Datenschutz durch Technikgestaltung und durch datenschutzfreundliche Voreinstellungen.",
+   "B": "Seit der DSGVO 2018 ist es Pflicht, keine bloße Empfehlung mehr.",
+   "C": "„by Design“ = Datenschutz in die Systemarchitektur eingebaut; „by Default“ = datenschutzfreundlichste Einstellung als Standard.",
+   "D": "Das Konzept ist eine reine Erfindung der DSGVO ohne jede Vorgeschichte."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Kernaussage von Art. 25."
+   },
+   "B": {
+    "correct": true,
+    "text": "Seit 2018 Pflicht statt Empfehlung."
+   },
+   "C": {
+    "correct": true,
+    "text": "Die zwei Dimensionen by Design und by Default."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – das Konzept geht auf Ann Cavoukian (Ontario, 1990er) zurück."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 2,
+  "title": "Privacy by Default",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Die datenschutzfreundlichste Einstellung muss der Standard sein.",
+   "B": "Opt-in statt Opt-out; die Marketing-Checkbox ist nicht vorausgewählt.",
+   "C": "Im Datenmodell z. B. visibility = „private“ und marketing_opt_in = False als Default.",
+   "D": "Voreingestellt sollten möglichst viele Daten geteilt werden – der User kann ja abwählen."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Datenschutzfreundlichste Einstellung als Standard."
+   },
+   "B": {
+    "correct": true,
+    "text": "Aktives Opt-in."
+   },
+   "C": {
+    "correct": true,
+    "text": "Defaults im Schema datenschutzfreundlich setzen."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – das ist das Gegenteil von Privacy by Default."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 3,
+  "title": "Die 7 Grundprinzipien nach Cavoukian",
+  "prompt": "Welche gehören zu den 7 Prinzipien?",
+  "options": {
+   "A": "Proaktiv, nicht reaktiv.",
+   "B": "Datenschutz als Standard.",
+   "C": "End-to-End-Sicherheit.",
+   "D": "Gewinnmaximierung durch Datenverkauf."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Prinzip 1."
+   },
+   "B": {
+    "correct": true,
+    "text": "Prinzip 2."
+   },
+   "C": {
+    "correct": true,
+    "text": "Prinzip 5 (weitere: eingebettet ins Design, volle Funktionalität, Transparenz, Respekt für die Privatsphäre)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – kein Cavoukian-Prinzip, sondern das Gegenteil."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 4,
+  "title": "Die 7 Prinzipien – Entwickler-Umsetzung",
+  "prompt": "Welche Beispiel-Zuordnungen sind korrekt?",
+  "options": {
+   "A": "„Proaktiv“ = Datenschutz schon im Sprint Planning, nicht erst nach dem Release.",
+   "B": "„Eingebettet ins Design“ = Verschlüsselung als Architekturentscheidung, nicht als Patch.",
+   "C": "„Volle Funktionalität“ = Datenschutz bedeutet zwangsläufig weniger Features.",
+   "D": "„Datenschutz als Standard“ = Opt-in statt Opt-out."
+  },
+  "correct": [
+   "A",
+   "B",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Proaktiv statt reaktiv."
+   },
+   "B": {
+    "correct": true,
+    "text": "Eingebettet ins Design."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – Datenschutz ≠ weniger Features; gutes UX-Design ermöglicht beides."
+   },
+   "D": {
+    "correct": true,
+    "text": "Datenschutz als Standard."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 5,
+  "title": "Privacy by Design – Forschungsstand",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Es fehlen oft Modelle, Prozesse und Tools, um PbD im Software-Lifecycle umzusetzen.",
+   "B": "Ingenieur:innen fühlen sich für Datenschutz selten zuständig („Aufgabe der Jurist:innen“).",
+   "C": "Seit 2018 gibt es deutlich mehr Forschung zu PbD, aber Validierung in der Industrie fehlt.",
+   "D": "PbD ist in der Praxis ein vollständig gelöstes Problem."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Lücke zwischen Theorie und Praxis."
+   },
+   "B": {
+    "correct": true,
+    "text": "Mangelnde gefühlte Verantwortung."
+   },
+   "C": {
+    "correct": true,
+    "text": "DSGVO als Treiber, aber Validierung fehlt."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – PbD ist gerade NICHT vollständig gelöst."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 6,
+  "title": "Anti-Pattern 1: „Collect everything, decide later“",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Daten auf Vorrat sammeln „für spätere Features“ ist das beschriebene Anti-Pattern.",
+   "B": "Es verstößt gegen die Datenminimierung (Art. 5 Abs. 1 lit. c).",
+   "C": "Es verstößt gegen die Zweckbindung (Art. 5 Abs. 1 lit. b).",
+   "D": "Es ist DSGVO-konform, solange man die Daten verschlüsselt."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Z. B. Registrierungsformular mit 20 Pflichtfeldern „für später“."
+   },
+   "B": {
+    "correct": true,
+    "text": "Datenminimierung verletzt."
+   },
+   "C": {
+    "correct": true,
+    "text": "Zweckbindung verletzt."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Verschlüsselung heilt den Verstoß gegen Minimierung/Zweckbindung nicht."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 7,
+  "title": "Anti-Pattern 2: Dark Patterns im Consent-Form",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "„Alles akzeptieren“ groß/bunt, „Ablehnen“ klein/grau ist ein Dark Pattern.",
+   "B": "Vorausgefüllte Consent-Checkboxen sind ein Dark Pattern.",
+   "C": "Nur etwa 11,8 % der Cookie-Banner der Top-10.000-Websites erfüllen die DSGVO-Mindestanforderungen.",
+   "D": "Das Entfernen des Opt-out-Buttons senkt die Zustimmungsrate."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Ungleiche Buttons."
+   },
+   "B": {
+    "correct": true,
+    "text": "Vorausgefüllte Checkboxen."
+   },
+   "C": {
+    "correct": true,
+    "text": "Empirischer Wert aus der Vorlesung."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – das Entfernen des Opt-out-Buttons ERHÖHT die Zustimmung um ca. 22 %."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 8,
+  "title": "Anti-Pattern 3: Anonymisierung vs. Pseudonymisierung",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Pseudonymisierung (Art. 4 Nr. 5): Zuordnungstabelle existiert noch → die DSGVO gilt weiterhin.",
+   "B": "Anonymisierung (Erwägungsgrund 26): kein Rückschluss möglich → die DSGVO gilt nicht.",
+   "C": "Nur den Vornamen zu entfernen ist bereits eine echte Anonymisierung.",
+   "D": "Nur die E-Mail zu hashen macht Daten sicher anonym."
+  },
+  "correct": [
+   "A",
+   "B"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Pseudonymisierung: DSGVO bleibt anwendbar."
+   },
+   "B": {
+    "correct": true,
+    "text": "Echte Anonymisierung: DSGVO nicht mehr anwendbar."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – andere Felder reichen oft zur Re-Identifizierung."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Hashes sind mit Rainbow Tables reversibel."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 9,
+  "title": "TOM (Art. 32) – Kernaussage",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Es sind „geeignete“ technische und organisatorische Maßnahmen zu treffen.",
+   "B": "„Geeignet“ ist kontextabhängig – keine One-Size-Fits-All-Lösung.",
+   "C": "Zu berücksichtigen sind u. a. Stand der Technik, Kosten sowie Art, Umfang und Zweck der Verarbeitung.",
+   "D": "Art. 32 verpflichtet nur den Verantwortlichen, nicht den Auftragsverarbeiter."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "„Geeignete“ Maßnahmen."
+   },
+   "B": {
+    "correct": true,
+    "text": "Kontextabhängig."
+   },
+   "C": {
+    "correct": true,
+    "text": "Abwägungskriterien des Art. 32."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Art. 32 verpflichtet Verantwortlichen UND Auftragsverarbeiter."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 10,
+  "title": "Art. 32 – die vier explizit genannten Maßnahmen",
+  "prompt": "Welche Maßnahmen nennt Art. 32 ausdrücklich?",
+  "options": {
+   "A": "Pseudonymisierung und Verschlüsselung.",
+   "B": "Sicherstellung von Vertraulichkeit, Integrität, Verfügbarkeit und Belastbarkeit.",
+   "C": "Rasche Wiederherstellung von Verfügbarkeit/Zugang nach einem Zwischenfall.",
+   "D": "Verfahren zur regelmäßigen Überprüfung und Bewertung."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Ausdrücklich genannt."
+   },
+   "B": {
+    "correct": true,
+    "text": "Ausdrücklich genannt."
+   },
+   "C": {
+    "correct": true,
+    "text": "Ausdrücklich genannt."
+   },
+   "D": {
+    "correct": true,
+    "text": "Ausdrücklich genannt. (Hier sind ALLE vier richtig.)"
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 11,
+  "title": "TOM – die 6 Kategorien",
+  "prompt": "Welche gehören zu den 6 TOM-Kategorien?",
+  "options": {
+   "A": "Verschlüsselung und Pseudonymisierung.",
+   "B": "Zugriffskontrolle (RBAC, Least Privilege, MFA für Admins).",
+   "C": "Logging & Monitoring sowie Backup & Recovery.",
+   "D": "Bewusster Verzicht auf regelmäßige Tests, um Ressourcen zu sparen."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Kategorien 1 & 2."
+   },
+   "B": {
+    "correct": true,
+    "text": "Zugriffskontrolle."
+   },
+   "C": {
+    "correct": true,
+    "text": "Logging/Monitoring und Backup/Recovery."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – regelmäßige Tests (Pen-Tests, Vulnerability Scans, Code Reviews) sind selbst eine Kategorie."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 12,
+  "title": "Verschlüsselung in der Praxis – 3 Ebenen",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Transport: TLS 1.2+ / HTTPS überall, HSTS-Header setzen.",
+   "B": "Speicherung: AES-256 für sensible Daten at rest.",
+   "C": "Passwörter: bcrypt oder argon2id.",
+   "D": "Eigene Krypto-Algorithmen selbst zu implementieren ist empfohlen."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Transport-Ebene."
+   },
+   "B": {
+    "correct": true,
+    "text": "Speicher-Ebene."
+   },
+   "C": {
+    "correct": true,
+    "text": "Passwort-Ebene."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – „Never implement your own crypto!“"
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 13,
+  "title": "Logging & Secrets-Management",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Zugriffe auf personenbezogene Daten loggen, aber nicht die Daten selbst.",
+   "B": "IDs statt Namen verwenden, keine E-Mails in Logs.",
+   "C": "API-Keys/Credentials in Environment Variables, nie im Quellcode.",
+   "D": "Vollständige PII in Error-Logs und Stack Traces ist unbedenklich."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Zugriff loggen, nicht die PII."
+   },
+   "B": {
+    "correct": true,
+    "text": "Pseudonyme IDs."
+   },
+   "C": {
+    "correct": true,
+    "text": "Secrets aus dem Code heraushalten."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – PII in Logs/Stack Traces ist ein typisches Risiko (z. B. Sentry/Datadog)."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 14,
+  "title": "Art. 32 – Bußgelder in der Praxis",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Bußgelder treffen u. a. mangelnde technische Abwehr (fehlende Verschlüsselung, veraltete Software).",
+   "B": "Auch menschliche Fehler (falsche E-Mail-Empfänger, verlorene USB-Sticks) können Bußgelder auslösen.",
+   "C": "Ein Bußgeld ist auch OHNE Datenpanne möglich – allein wegen unzureichender Maßnahmen.",
+   "D": "Ohne tatsächlichen Datenabfluss kann nie ein Bußgeld verhängt werden."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Cluster „gezielte Angriffe“."
+   },
+   "B": {
+    "correct": true,
+    "text": "Cluster „menschliche Fehler“."
+   },
+   "C": {
+    "correct": true,
+    "text": "Cluster „keine Datenpanne“ – Bußgeld trotzdem."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – siehe C; unzureichende TOM reichen aus."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 15,
+  "title": "DPIA / DSFA (Art. 35) – Was & Wann",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Die DPIA ist eine Risikoanalyse VOR Beginn der Verarbeitung.",
+   "B": "Pflicht bei hohem Risiko, z. B. bei umfangreichem Profiling.",
+   "C": "Pflicht u. a. bei systematischer Überwachung öffentlich zugänglicher Bereiche und neuen Technologien mit hohem Risiko.",
+   "D": "Eine DPIA wird grundsätzlich erst nach Abschluss der Verarbeitung erstellt."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Risikoanalyse vorab."
+   },
+   "B": {
+    "correct": true,
+    "text": "Profiling als Auslöser."
+   },
+   "C": {
+    "correct": true,
+    "text": "Weitere Auslöser; zusätzlich Blacklists der DSB prüfen."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – die DPIA erfolgt VOR der Verarbeitung."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 16,
+  "title": "Die 5 Schritte einer DPIA",
+  "prompt": "Welche gehören zu den 5 Schritten?",
+  "options": {
+   "A": "Beschreibung der Verarbeitung (Was/Warum/Wie/Von wem).",
+   "B": "Notwendigkeit und Verhältnismäßigkeit (mildere Mittel?).",
+   "C": "Risikobewertung für Betroffene (Eintrittswahrscheinlichkeit × Schwere).",
+   "D": "Sofortiger Verkauf der Daten zur Refinanzierung des Projekts."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Schritt 1."
+   },
+   "B": {
+    "correct": true,
+    "text": "Schritt 2."
+   },
+   "C": {
+    "correct": true,
+    "text": "Schritt 3 (Schritt 4: Maßnahmen zur Risikominderung; Schritt 5: Dokumentation/Konsultation)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – kein DPIA-Schritt."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 17,
+  "title": "DPIA – Verhältnismäßigkeit (Praxis)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Verhältnismäßigkeit ist der Schlüssel: Gibt es ein „milderes“ Mittel?",
+   "B": "Beispiel: Geht die Empfehlung auch ohne Standortdaten? Reicht die Kaufhistorie?",
+   "C": "Mögliche Maßnahmen: Pseudonymisierung der Profile, Opt-in fürs Tracking, Löschung nach 12 Monaten.",
+   "D": "Sobald eine Verarbeitung „nützlich“ ist, ist sie automatisch verhältnismäßig."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Mildere Mittel prüfen."
+   },
+   "B": {
+    "correct": true,
+    "text": "Konkrete Verhältnismäßigkeitsfrage."
+   },
+   "C": {
+    "correct": true,
+    "text": "Risikomindernde Maßnahmen."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Nutzen allein begründet keine Verhältnismäßigkeit."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 18,
+  "title": "Auftragsverarbeitung – AVV (Art. 28)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Ein AVV ist immer nötig, wenn ein Dritter personenbezogene Daten im Auftrag verarbeitet.",
+   "B": "Entscheidungskriterium: Wer bestimmt Zweck und Mittel?",
+   "C": "Inhalt u. a.: Gegenstand, Dauer, Art der Daten, Pflichten, TOM, Subunternehmer-Regelung.",
+   "D": "Der Auftragsverarbeiter entscheidet selbst über das „Warum“ und „Wie“."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "AVV-Pflicht."
+   },
+   "B": {
+    "correct": true,
+    "text": "Zweck & Mittel als Abgrenzung."
+   },
+   "C": {
+    "correct": true,
+    "text": "Pflichtinhalte des AVV."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – der Verantwortliche bestimmt Warum/Wie; der Auftragsverarbeiter führt nur aus."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 19,
+  "title": "AVV in der Entwickler-Praxis",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "AWS/Azure/GCP sind Auftragsverarbeiter; AVV/DPA nötig, EU-Region wählen.",
+   "B": "SendGrid/Mailchimp: AVV nötig, da E-Mail-Adressen personenbezogen sind.",
+   "C": "Anthropic-/OpenAI-API: AVV nötig; Trainingsdaten-Nutzung prüfen.",
+   "D": "Für Google Analytics oder Sentry/Datadog braucht es nie einen AVV."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Cloud-Anbieter = Auftragsverarbeiter."
+   },
+   "B": {
+    "correct": true,
+    "text": "E-Mail-Versender = Auftragsverarbeiter."
+   },
+   "C": {
+    "correct": true,
+    "text": "LLM-APIs = Auftragsverarbeiter."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – auch Google Analytics und Sentry/Datadog sind Auftragsverarbeiter (AVV nötig)."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 20,
+  "title": "Drittlandtransfer – Mechanismen (Art. 44–49)",
+  "prompt": "Welche sind zulässige Transfer-Mechanismen?",
+  "options": {
+   "A": "Angemessenheitsbeschluss der EU-Kommission.",
+   "B": "Standardvertragsklauseln (SCCs), neue Version seit Juni 2021, mit Transfer Impact Assessment.",
+   "C": "Binding Corporate Rules für konzerninterne Transfers.",
+   "D": "Ein Transfer in ein Drittland ist generell und voraussetzungslos erlaubt."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Mechanismus 1."
+   },
+   "B": {
+    "correct": true,
+    "text": "Mechanismus 2 (SCCs)."
+   },
+   "C": {
+    "correct": true,
+    "text": "Mechanismus 3 (BCRs)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Transfers nur unter bestimmten Voraussetzungen."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 21,
+  "title": "Schrems II & Historie",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Schrems II (Juli 2020) erklärte das Privacy Shield für ungültig.",
+   "B": "SCCs sind seither nur mit Zusatzmaßnahmen zulässig.",
+   "C": "Safe Harbor wurde durch Schrems I gekippt.",
+   "D": "Das Privacy Shield ist nach wie vor uneingeschränkt gültig."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Privacy Shield gekippt."
+   },
+   "B": {
+    "correct": true,
+    "text": "SCCs + Zusatzmaßnahmen."
+   },
+   "C": {
+    "correct": true,
+    "text": "Safe Harbor (2000–2015) durch Schrems I."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – das Privacy Shield ist seit 2020 ungültig."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 22,
+  "title": "EU-US Data Privacy Framework",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Angemessenheitsbeschluss seit 10. Juli 2023.",
+   "B": "Gilt nur für zertifizierte US-Unternehmen (Liste auf dataprivacyframework.gov).",
+   "C": "Es ist der dritte Anlauf nach Safe Harbor und Privacy Shield.",
+   "D": "Das DPF ist rechtlich endgültig und unangreifbar."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Seit 10.07.2023."
+   },
+   "B": {
+    "correct": true,
+    "text": "Nur zertifizierte US-Unternehmen."
+   },
+   "C": {
+    "correct": true,
+    "text": "Nach Safe Harbor und Privacy Shield."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – erste Klage überstanden, aber nicht endgültig (Einspruch Latombe am EuGH)."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 23,
+  "title": "Drittlandtransfer – Praxis für Entwickler:innen",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "npm-/pip-Telemetrie kann bei jedem Install unbewusst Daten transferieren.",
+   "B": "API-Calls an US-Dienste (z. B. Anthropic, Mailchimp, Stripe) sind ein Transfer bei jedem Request.",
+   "C": "CDNs mit Servern außerhalb der EU und US-Error-Tracking (PII in Stack Traces) sind Transfers.",
+   "D": "Solange der Code in der EU geschrieben wird, findet kein Drittlandtransfer statt."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Telemetrie-Transfer."
+   },
+   "B": {
+    "correct": true,
+    "text": "API-Transfer pro Request."
+   },
+   "C": {
+    "correct": true,
+    "text": "CDN- und Error-Tracking-Transfer."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – entscheidend ist, wohin Daten fließen, nicht wo der Code entsteht."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 24,
+  "title": "10-Punkte-Entwickler:innen-Checkliste",
+  "prompt": "Welche DSGVO-Zuordnungen sind korrekt?",
+  "options": {
+   "A": "Datenfluss-Diagramm → Art. 30 (Verarbeitungsverzeichnis).",
+   "B": "Consent-Management (Opt-in, Widerruf, Nachweis) → Art. 7.",
+   "C": "Verschlüsselung & Zugriffskonzept (TLS, Hashing, RBAC) → Art. 32.",
+   "D": "Incident Response Plan / 72-Stunden-Meldepflicht → Art. 6."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Art. 30."
+   },
+   "B": {
+    "correct": true,
+    "text": "Art. 7."
+   },
+   "C": {
+    "correct": true,
+    "text": "Art. 32."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – die Datenpannen-Meldepflicht ist Art. 33/34, nicht Art. 6."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 25,
+  "title": "Die 72-Stunden-Regel (Art. 33 & 34)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Eine Datenpanne ist der Aufsichtsbehörde unverzüglich, spätestens binnen 72 Stunden, zu melden.",
+   "B": "Die Meldung entfällt, wenn voraussichtlich kein Risiko für Betroffene besteht.",
+   "C": "Bei hohem Risiko sind auch die Betroffenen direkt zu benachrichtigen (Art. 34).",
+   "D": "Gemeldet werden muss nichts Konkretes – eine formlose Notiz genügt."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "72-Stunden-Frist."
+   },
+   "B": {
+    "correct": true,
+    "text": "Ausnahme bei fehlendem Risiko."
+   },
+   "C": {
+    "correct": true,
+    "text": "Art. 34: Betroffenenbenachrichtigung."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – zu melden sind u. a. Art der Verletzung, Datenkategorien/Anzahl, Folgen und Maßnahmen."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 26,
+  "title": "EU AI Act – Grundlagen",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "VO (EU) 2024/1689, in Kraft seit 01.08.2024 – weltweit erstes umfassendes KI-Gesetz.",
+   "B": "Wie die DSGVO: Verordnung → unmittelbar anwendbar, mit Marktortprinzip.",
+   "C": "Der AI Act ersetzt die DSGVO – bei personenbezogenen Daten gilt nur noch der AI Act.",
+   "D": "Anderes Regelungsobjekt: Die DSGVO schützt Daten, der AI Act reguliert das KI-System (Produkt)."
+  },
+  "correct": [
+   "A",
+   "B",
+   "D"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "VO 2024/1689, seit 01.08.2024."
+   },
+   "B": {
+    "correct": true,
+    "text": "Verordnung + Marktortprinzip wie DSGVO."
+   },
+   "C": {
+    "correct": false,
+    "text": "Falsch – beide gelten parallel; der AI Act ersetzt die DSGVO NICHT."
+   },
+   "D": {
+    "correct": true,
+    "text": "Daten (DSGVO) vs. Produkt/KI-System (AI Act)."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 27,
+  "title": "EU AI Act – Risikopyramide",
+  "prompt": "Welche Zuordnungen sind korrekt?",
+  "options": {
+   "A": "Verboten (Art. 5): u. a. Social Scoring, Emotionserkennung am Arbeitsplatz/in der Bildung, Manipulation.",
+   "B": "Hochrisiko (Anhang III): u. a. Bewerbung, Kreditwürdigkeit, Bildung, kritische Infrastruktur, Strafverfolgung.",
+   "C": "Transparenzpflicht (Art. 50): u. a. Chatbots, Deepfakes, KI-generierte Inhalte.",
+   "D": "Spam-Filter und Empfehlungssysteme sind grundsätzlich Hochrisiko."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Oberste Stufe: verboten."
+   },
+   "B": {
+    "correct": true,
+    "text": "Zweite Stufe: Hochrisiko."
+   },
+   "C": {
+    "correct": true,
+    "text": "Dritte Stufe: Transparenzpflicht."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Spam-Filter/Empfehlungssysteme sind minimales Risiko (keine besonderen Pflichten)."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 28,
+  "title": "EU AI Act – Einstufung (Quiz)",
+  "prompt": "Welche Einstufungen sind korrekt?",
+  "options": {
+   "A": "Spam-Filter fürs Mail-Gateway → minimales Risiko.",
+   "B": "KI-Vorsortierung von Bewerbungs-CVs → Hochrisiko.",
+   "C": "Support-Chatbot im Online-Shop → Transparenzpflicht.",
+   "D": "Bürger-Bewertung nach Verhalten (Behörden-Scoring) → nur Transparenzpflicht."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Minimal."
+   },
+   "B": {
+    "correct": true,
+    "text": "Hochrisiko (Anhang III)."
+   },
+   "C": {
+    "correct": true,
+    "text": "Transparenz (Art. 50)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – staatliches Social Scoring ist VERBOTEN (Art. 5), nicht nur transparenzpflichtig."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 29,
+  "title": "EU AI Act – Kennzeichnungspflicht (Art. 50)",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Nutzer:innen muss erkennbar sein, dass sie mit einer KI sprechen (außer es ist offensichtlich).",
+   "B": "KI-generierte Inhalte (Text, Bild, Audio, Video) sind maschinenlesbar als künstlich zu markieren.",
+   "C": "Deepfakes sind als KI-erzeugt zu kennzeichnen – auch ohne Täuschungsabsicht.",
+   "D": "Art. 50 gilt bereits seit dem Inkrafttreten am 01.08.2024."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Offenlegung bei Chatbots."
+   },
+   "B": {
+    "correct": true,
+    "text": "Markierung von KI-Output (Wasserzeichen/Metadaten)."
+   },
+   "C": {
+    "correct": true,
+    "text": "Deepfake-Kennzeichnung."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – die Transparenzpflicht (Art. 50) gilt ab 02.08.2026."
+   }
+  }
+ },
+ {
+  "part": "Teil 2: Compliance in der Praxis",
+  "num": 30,
+  "title": "EU AI Act – Rollen & Bußgelder",
+  "prompt": "Welche Aussagen treffen zu?",
+  "options": {
+   "A": "Wer ein fremdes Modell fine-tunt oder rebrandet, kann selbst zum „Anbieter“ werden (Art. 25).",
+   "B": "Bei verbotener KI drohen Bußgelder bis 35 Mio. € bzw. 7 % des Jahresumsatzes (Art. 99).",
+   "C": "Für übrige Verstöße: bis 15 Mio. € bzw. 3 %.",
+   "D": "Betreiber eines KI-HR-Tools haben keinerlei Pflichten."
+  },
+  "correct": [
+   "A",
+   "B",
+   "C"
+  ],
+  "expl": {
+   "A": {
+    "correct": true,
+    "text": "Fine-Tuning/Rebranding → Anbieterrolle."
+   },
+   "B": {
+    "correct": true,
+    "text": "Höchstes Bußgeld bei verbotener KI."
+   },
+   "C": {
+    "correct": true,
+    "text": "Niedrigerer Rahmen für übrige Verstöße (KMU/Start-ups: niedrigerer Betrag)."
+   },
+   "D": {
+    "correct": false,
+    "text": "Falsch – Betreiber haben Pflichten (Anleitung befolgen, menschliche Aufsicht, Monitoring); oft Hochrisiko."
+   }
+  }
+ }
+]

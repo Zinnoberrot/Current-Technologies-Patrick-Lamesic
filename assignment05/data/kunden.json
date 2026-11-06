@@ -1,0 +1,58 @@
+{
+  "firma": "Sporthaus Beispiel GmbH (fiktiv)",
+  "kunden": [
+    {
+      "kundennummer": "K-1001",
+      "name": "Max Mustermann",
+      "email": "max.mustermann@example.com",
+      "geburtsdatum": "1990-04-12",
+      "adresse": "Musterstraße 1, 6020 Innsbruck",
+      "telefon": "+43 660 1234567",
+      "kunde_seit": "2019-03-02",
+      "passwort_hash": "$2b$12$Q9yZ1f3cXbV0nYl5x8m7AeZ0v1k2T3u4W5x6Y7z8A9b0C1d2E3f4G",
+      "bestellungen": [
+        { "datum": "2025-11-20", "artikel": "Skihelm Alpin Pro", "betrag_eur": 129.90, "zahlungsart": "Kreditkarte (endet auf 4821)" },
+        { "datum": "2026-06-03", "artikel": "Wanderschuhe Trail X", "betrag_eur": 159.00, "zahlungsart": "PayPal" }
+      ],
+      "newsletter": { "abonniert": true, "einwilligung_am": "2021-05-14", "quelle": "Online-Shop" },
+      "support_tickets": [
+        {
+          "datum": "2026-06-10",
+          "betreff": "Lieferung nicht erhalten",
+          "verlauf": "Kunde meldet, dass das Paket nicht angekommen ist. Laut Zusteller wurde es an die Nachbarin Erika Schmid übergeben. Bearbeitet von Julia Berger.",
+          "erwaehnte_personen": ["Erika Schmid", "Julia Berger"]
+        }
+      ]
+    },
+    {
+      "kundennummer": "K-1002",
+      "name": "Anna Huber",
+      "email": "anna.huber@example.org",
+      "geburtsdatum": "1985-09-30",
+      "adresse": "Bergweg 7, 6060 Hall in Tirol",
+      "telefon": "+43 664 7654321",
+      "kunde_seit": "2022-01-15",
+      "passwort_hash": "$2b$12$Zx8Yw7Vu6Ts5Rq4Po3Nm2Lk1Jh0Gf9Ed8Cb7Aa6Zz5Yy4Xx3Ww2Vv",
+      "bestellungen": [
+        { "datum": "2026-02-11", "artikel": "Langlaufski Nordic 190", "betrag_eur": 289.00, "zahlungsart": "Rechnung" }
+      ],
+      "newsletter": { "abonniert": false, "einwilligung_am": null, "quelle": null },
+      "support_tickets": []
+    },
+    {
+      "kundennummer": "K-1003",
+      "name": "Lukas Gruber",
+      "email": "lukas.gruber@example.net",
+      "geburtsdatum": "1978-01-05",
+      "adresse": "Innrain 52, 6020 Innsbruck",
+      "telefon": "+43 676 1112233",
+      "kunde_seit": "2020-08-30",
+      "passwort_hash": "$2b$12$Aa1Bb2Cc3Dd4Ee5Ff6Gg7Hh8Ii9Jj0Kk1Ll2Mm3Nn4Oo5Pp6Qq7Rr",
+      "bestellungen": [
+        { "datum": "2026-09-01", "artikel": "Kletterseil 60 m", "betrag_eur": 179.00, "zahlungsart": "Kreditkarte (endet auf 1177)" }
+      ],
+      "newsletter": { "abonniert": true, "einwilligung_am": "2020-08-30", "quelle": "Filiale" },
+      "support_tickets": []
+    }
+  ]
+}
