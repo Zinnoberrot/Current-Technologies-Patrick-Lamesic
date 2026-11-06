@@ -41,6 +41,15 @@ Die Guardrails stehen im Code ([guardrails.py](guardrails.py), [tools.py](tools.
 | Not-Aus | liegt eine Datei `STOP` im Ordner, hält der Agent vor dem nächsten Schritt an (z. B. `touch STOP` in einem zweiten Terminal) |
 | Protokoll | jeder Tool-Aufruf und jede Guardrail-Entscheidung wird in `logs/audit.jsonl` gespeichert |
 
+## Einordnung
+
+- **Agent Loop:** Das LLM bekommt ein Ziel („Bearbeite die Anfrage“) und entscheidet in einer Schleife selbst, welches Tool es als Nächstes aufruft (Reason, Act, Observe). Die Tools werden per Function Calling als JSON-Schema übergeben.
+- **Autonomiestufe 3, Agent mit Freigabe:** Der Agent arbeitet mehrschrittig. Versendet wird nur nach Freigabe durch einen Menschen (Approval Gate). Bei unklarer Identität, Manipulationsversuchen oder einem anderen Anliegen eskaliert er an einen Menschen.
+- **Lethal Trifecta:** Der Agent hat Zugriff auf private Daten, verarbeitet nicht vertrauenswürdige E-Mails und kann nach außen versenden. Deshalb ist der Datenzugriff auf die verifizierte Person beschränkt, der Empfänger fest vorgegeben und der Versand nur nach Freigabe möglich.
+- **Guardrails auf allen 4 Ebenen:** Eingabe (Prompt Injection, Zuständigkeit), Ausgabe (fremde Daten, Pflichtangaben, Abschlussprüfung), Aktion (Least Privilege, nur lesend, kein Lösch-Tool) und System (Schrittlimit, Not-Aus, Protokoll). Alle sind deterministisch im Code umgesetzt.
+- **Datenschutz:** Das LLM läuft lokal. Personenbezogene Daten gehen an keinen externen LLM-Anbieter.
+- **Vorgegebener Ablauf:** Der Systemprompt gibt die Reihenfolge der Schritte vor. Das LLM entscheidet weiterhin selbst, ob es eskaliert oder nachbessert. Das ist eine bewusste Entscheidung, weil sich das kleine 7B-Modell schon so nicht immer an den Prompt gehalten hat (siehe Ergebnisse).
+
 ## Starten
 
 Voraussetzung: Docker und Python 3.10 oder neuer (keine zusätzlichen Pakete nötig).
